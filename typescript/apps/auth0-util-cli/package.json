@@ -1,5 +1,5 @@
 {
-  "name": "@motd-ts/express-backend",
+  "name": "@motd-ts/auth0-util-cli",
   "license": "BOBBO-NET Friendly MIT License",
   "private": "true",
   "type": "module",
@@ -10,6 +10,7 @@
     "tsx": "^4.7.1"
   },
   "dependencies": {
-    "@motd-ts/auth0-architecture": "workspace:*"
+    "@motd-ts/auth0-architecture": "workspace:*",
+    "commander": "^12.1.0"
   }
 }
