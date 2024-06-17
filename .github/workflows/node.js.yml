@@ -38,6 +38,7 @@ jobs:
 
       - name: Get pnpm store directory
         shell: bash
+        working-directory: ./typescript
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
@@ -53,14 +54,17 @@ jobs:
         id: cache-mongodb-binaries
         uses: actions/cache@v4
         with:
-          path: ~/.cache/mongodb-binaries
+          path: ~/typescript/.cache/mongodb-binaries
           key: ${{ matrix.node-version }}
 
       - name: Install dependencies
+        working-directory: ./typescript
         run: pnpm install
 
       - name: Lint
+        working-directory: ./typescript
         run: pnpm run lint
 
       - name: Run all tests
+        working-directory: ./typescript
         run: pnpm run test
