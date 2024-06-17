@@ -11,6 +11,12 @@
     },
     {
       "path": "./typescript/apps/express-backend"
+    },
+    {
+      "path": "./typescript/packages/models"
+    },
+    {
+      "path": "./typescript/packages/auth0-architecture"
     }
   ],
   "settings": {
