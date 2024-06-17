@@ -1,0 +1,39 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "./typescript"
+    },
+    {
+      "path": "./typescript/apps/react-frontend"
+    },
+    {
+      "path": "./typescript/apps/express-backend"
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "cmake.configureOnOpen": false,
+    "editor.tabSize": 2,
+    "eslint.workingDirectories": [
+      "./typescript/packages/*",
+      "./typescript/apps/*"
+    ],
+    "cssVariables.lookupFiles": [
+      "**/*.css",
+      "**/*.scss",
+      "**/*.sass",
+      "**/*.less",
+      "**/node_modules/@mantine/core/styles.css"
+    ],
+    "[typescript]": {
+      "editor.rulers": [100]
+    },
+    "[typescriptreact]": {
+      "editor.rulers": [100]
+    }
+  }
+}
