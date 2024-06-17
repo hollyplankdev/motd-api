@@ -4,12 +4,13 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "tsx src/cli.ts"
   },
   "devDependencies": {
     "tsx": "^4.7.1"
   },
   "dependencies": {
+    "@commander-js/extra-typings": "^12.1.0",
     "@motd-ts/auth0-architecture": "workspace:*",
     "commander": "^12.1.0"
   }
