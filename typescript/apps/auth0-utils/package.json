@@ -1,0 +1,15 @@
+{
+  "name": "@motd-ts/express-backend",
+  "license": "BOBBO-NET Friendly MIT License",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1"
+  },
+  "dependencies": {
+    "@motd-ts/auth0-architecture": "workspace:*"
+  }
+}
