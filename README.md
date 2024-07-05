@@ -4,5 +4,7 @@ A simple message of the day application, written in multiple languages.
 
 ## Implementations
 
-- [TypeScript](typescript/README.md) (Express.js, React.js)
-- [.NET](dotnet/README.md)
+| Language                           | Framework            | Status      |
+| ---------------------------------- | -------------------- | ----------- |
+| [TypeScript](typescript/README.md) | Express.js, React.js | Working     |
+| [C#/.NET](dotnet/README.md)        | .NET Core            | In Progress |
