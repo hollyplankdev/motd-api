@@ -1,25 +1,26 @@
 from motd_api_py import app
+import motd_api_py.controllers.motd as controller
 
 @app.get("/")
 def motdReadLatest():
-    return None
+    return controller.readLatest()
 
 @app.post("/")
 def motdCreate():
-    return None
+    return controller.create()
 
 @app.get("/history")
 def motdList():
-    return None
+    return controller.list()
 
 @app.get("/:id")
 def motdRead():
-    return None
+    return controller.read()
 
 @app.patch("/:id")
 def motdUpdate():
-    return None
+    return controller.update()
 
 @app.delete("/:id")
 def motdRemove():
-    return None
+    return controller.remove()
