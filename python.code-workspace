@@ -31,7 +31,7 @@
         "request": "launch",
         "module": "flask",
         "env": {
-          "FLASK_APP": "app.py",
+          "FLASK_APP": "motd_api_py/__init__.py",
           "FLASK_DEBUG": "1"
         },
         "args": ["run", "--no-debugger", "--no-reload"],
