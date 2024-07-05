@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "./dotnet"
+    },
+    {
+      "path": "./typescript/apps/react-frontend"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "cmake.configureOnOpen": false
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "redhat.vscode-yaml",
+      "antfu.vite"
+    ]
+  }
+}
