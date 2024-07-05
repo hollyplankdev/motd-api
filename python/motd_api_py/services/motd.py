@@ -1,11 +1,24 @@
+import datetime
 from typing import Optional
 
+from motd_api_py.models.motd import Motd
+from motd_api_py.db import get_db
 
-def create_motd(message: str) -> None:
-    # TODO
-    return None
 
-def fetch_latest_motd() -> None:
+def get_collection():
+    return get_db().get_collection("Motd")
+
+def create_motd(message: str) -> Motd:
+    new_motd = Motd()
+    new_motd.message = message
+    new_motd.created_at = datetime.datetime.now(tz=datetime.timezone.utc)
+    new_motd.updated_at = new_motd.created_at
+    result = get_collection().insert_one(new_motd.__dict__)
+
+    new_motd.id = result.inserted_id
+    return new_motd
+
+def fetch_latest_motd() -> Optional[Motd]:
     # TODO
     return None
 
