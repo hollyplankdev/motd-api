@@ -12,6 +12,7 @@
   "dependencies": {
     "@commander-js/extra-typings": "^12.1.0",
     "@motd-ts/auth0-architecture": "workspace:*",
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "zod-to-json-schema": "^3.23.1"
   }
 }
