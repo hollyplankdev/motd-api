@@ -1,7 +1,7 @@
 def create():
     return None
 
-def readLatest():
+def read_latest():
     return None
 
 def read():

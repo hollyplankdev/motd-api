@@ -1,26 +1,28 @@
-from motd_api_py import app
+from flask import Blueprint
 import motd_api_py.controllers.motd as controller
 
-@app.get("/")
-def motdReadLatest():
-    return controller.readLatest()
+motd = Blueprint("motd", __name__)
 
-@app.post("/")
-def motdCreate():
+@motd.get("/")
+def read_latest():
+    return controller.read_latest()
+
+@motd.post("/")
+def create():
     return controller.create()
 
-@app.get("/history")
-def motdList():
+@motd.get("/history")
+def list():
     return controller.list()
 
-@app.get("/:id")
-def motdRead():
+@motd.get("/:id")
+def read():
     return controller.read()
 
-@app.patch("/:id")
-def motdUpdate():
+@motd.patch("/:id")
+def update():
     return controller.update()
 
-@app.delete("/:id")
-def motdRemove():
+@motd.delete("/:id")
+def remove():
     return controller.remove()

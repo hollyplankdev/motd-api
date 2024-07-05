@@ -1,4 +1,5 @@
 from flask import Flask
-app = Flask(__name__)
+from motd_api_py.routes.motd import motd
 
-import motd_api_py.routes.motd
+app = Flask(__name__)
+app.register_blueprint(motd)
