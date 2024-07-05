@@ -1,0 +1,11 @@
+[project]
+version = "1.0.0"
+name = "motd_api_py"
+description = "MOTD API implemented in Python using Flask"
+dependencies = [
+    "flask",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"

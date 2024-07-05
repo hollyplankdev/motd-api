@@ -1,0 +1,43 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "./python"
+    },
+    {
+      "path": "./typescript/apps/react-frontend"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "cmake.configureOnOpen": false
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "redhat.vscode-yaml",
+      "antfu.vite"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python Debugger: Flask",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "flask",
+        "env": {
+          "FLASK_APP": "motd_api_py/__init__.py",
+          "FLASK_DEBUG": "1"
+        },
+        "args": ["run", "--no-debugger", "--no-reload"],
+        "jinja": true,
+        "autoStartBrowser": false
+      }
+    ]
+  }
+}
