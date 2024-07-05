@@ -26,8 +26,13 @@ def fetch_latest_motd() -> Optional[Motd]:
     return Motd.from_bson(data)
 
 def populate_default_motds() -> None:
-    # TODO
-    return None
+    # If there is at least ONE motd, we don't need to populate defaults
+    latest = fetch_latest_motd()
+    if latest is not None:
+        return
+
+    # OTHERWISE - populate the db with a default MOTD!
+    create_motd("The once magnificent buildings lay in ruin, a testament to the hatred that had consumed them.")    
 
 def fetch_motd(id: str) -> None:
     # TODO
