@@ -1,6 +1,7 @@
 import datetime
 from typing import Optional
 
+from flask_pymongo import DESCENDING
 from motd_api_py.models.motd import Motd
 from motd_api_py.db import get_db
 
@@ -11,16 +12,18 @@ def get_collection():
 def create_motd(message: str) -> Motd:
     new_motd = Motd()
     new_motd.message = message
-    new_motd.created_at = datetime.datetime.now(tz=datetime.timezone.utc)
-    new_motd.updated_at = new_motd.created_at
-    result = get_collection().insert_one(new_motd.__dict__)
+    new_motd.createdAt = datetime.datetime.now(tz=datetime.timezone.utc)
+    new_motd.updatedAt = new_motd.createdAt
+    result = get_collection().insert_one(new_motd.to_bson())
 
-    new_motd.id = result.inserted_id
+    new_motd._id = result.inserted_id
     return new_motd
 
 def fetch_latest_motd() -> Optional[Motd]:
-    # TODO
-    return None
+    data = get_collection().find_one(sort=["createdAt", DESCENDING])
+    if data is None:
+        return None
+    return Motd.from_bson(data)
 
 def populate_default_motds() -> None:
     # TODO
