@@ -5,9 +5,9 @@ name: TypeScript Tests
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "feature/typescript"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "feature/typescript"]
 
 env:
   # FROM [typegoose](https://github.com/typegoose/typegoose/blob/master/.github/workflows/tests.yml):
