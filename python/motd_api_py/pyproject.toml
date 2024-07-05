@@ -4,6 +4,9 @@ name = "motd_api_py"
 description = "MOTD API implemented in Python using Flask"
 dependencies = [
     "flask",
+    "pymongo[srv]",
+    "Flask-PyMongo",
+    "python-dotenv"
 ]
 
 [build-system]
