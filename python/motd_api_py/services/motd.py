@@ -1,7 +1,7 @@
 import datetime
 from typing import Optional
 
-from flask_pymongo import DESCENDING
+from flask_pymongo import DESCENDING, ObjectId
 from motd_api_py.models.motd import Motd
 from motd_api_py.db import get_db
 
@@ -34,9 +34,11 @@ def populate_default_motds() -> None:
     # OTHERWISE - populate the db with a default MOTD!
     create_motd("The once magnificent buildings lay in ruin, a testament to the hatred that had consumed them.")    
 
-def fetch_motd(id: str) -> None:
-    # TODO
-    return None
+def fetch_motd(id: str) -> Motd:
+    data = get_collection().find_one({ "_id": ObjectId(id) })
+    if data is None:
+        return
+    return Motd.from_bson(data)
 
 def update_motd(id: str, new_message: str) -> None:
     # TODO
